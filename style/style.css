@@ -1,0 +1,55 @@
+:root {
+    --main-lightest-color: #FCEFC0;
+    --main-lighter-color: #FAD882;
+    --main-light-color: #ED9B20;
+    --main-dark-color: #D76800;
+    --main-darker-color: #B34200;
+    --main-darkest-color: #882100;
+  }
+
+nav{
+      background-color: var(--main-lighter-color);
+}
+
+html{
+  font-family: 'Nunito', sans-serif;
+}
+
+.navbar{
+  padding: 0px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+}
+
+.navbar-brand{
+  padding-left: 0.8rem;
+}
+
+.nav-item {
+  height: 110px;
+  width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.nav-link{
+  padding-top: 43px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nav-item:hover{
+  background-color: var(--main-light-color);
+}
+
+li.active{
+  background-color: var(--main-light-color);
+}
+
+.navbar form{
+  padding: 0.8rem;
+}
+
+.btn{
+  padding: 0px;
+}
