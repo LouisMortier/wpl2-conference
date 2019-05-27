@@ -25,6 +25,10 @@ html{
   padding-left: 0.8rem;
 }
 
+.navbar-toggler{
+  margin-right: 0.8rem;
+}
+
 .nav-item {
   height: 110px;
   width: 100px;
@@ -52,4 +56,9 @@ li.active{
 
 .btn{
   padding: 0px;
+}
+
+article{
+  background-image: url("../img/bg_sliver.jpg");
+  padding-bottom: 400px;
 }
