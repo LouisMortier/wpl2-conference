@@ -1,11 +1,11 @@
 :root {
-    --main-lightest: #FCEFC0;
-    --main-lighter: #FAD882;
-    --main-light: #ED9B20;
-    --main-dark: #D76800;
-    --main-darker: #B34200;
-    --main-darkest: #882100;
-    --main-gray: #707070;
+  --main-lightest: #FCEFC0;
+  --main-lighter: #FAD882;
+  --main-light: #ED9B20;
+  --main-dark: #D76800;
+  --main-darker: #B34200;
+  --main-darkest: #882100;
+  --main-gray: #707070;
 }
 
 html{
@@ -13,15 +13,12 @@ html{
 }
 
 body{
-  background-image: url("../img/bg_sliver.jpg");
+  background-color: var(--main-lightest);
 }
 
 nav{
-  /* background-color: var(--main-lighter); */
-  /* background-image: url("../img/bg_sliver.jpg"); */
+  background-color: var(--main-lighter);
 }
-
-
 
 .navbar{
   padding: 0px;
@@ -81,6 +78,5 @@ li.active{
 }
 
 article{
-  /* background-image: url("../img/bg_sliver.jpg"); */
   padding-bottom: 400px;
 }
