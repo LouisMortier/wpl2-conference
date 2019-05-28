@@ -1,19 +1,27 @@
 :root {
-    --main-lightest-color: #FCEFC0;
-    --main-lighter-color: #FAD882;
-    --main-light-color: #ED9B20;
-    --main-dark-color: #D76800;
-    --main-darker-color: #B34200;
-    --main-darkest-color: #882100;
-  }
-
-nav{
-      background-color: var(--main-lighter-color);
+    --main-lightest: #FCEFC0;
+    --main-lighter: #FAD882;
+    --main-light: #ED9B20;
+    --main-dark: #D76800;
+    --main-darker: #B34200;
+    --main-darkest: #882100;
+    --main-gray: #707070;
 }
 
 html{
   font-family: 'Nunito', sans-serif;
 }
+
+body{
+  background-image: url("../img/bg_sliver.jpg");
+}
+
+nav{
+  /* background-color: var(--main-lighter); */
+  /* background-image: url("../img/bg_sliver.jpg"); */
+}
+
+
 
 .navbar{
   padding: 0px;
@@ -31,23 +39,37 @@ html{
 
 .nav-item {
   height: 110px;
-  width: 100px;
-  display: block;
+  width: 101px;
   margin: 0 auto;
 }
 
 .nav-link{
-  padding-top: 43px;
+  padding: 43px;
   margin: 0 auto;
   text-align: center;
+  color: black;
+  display: block;
+}
+
+.nav-link:hover{
+  text-decoration: none;
+  color: white;
+}
+
+.active>.nav-link{
+  color: white;
+}
+
+.nav-item{
+  background-color: var(--main-lighter);
 }
 
 .nav-item:hover{
-  background-color: var(--main-light-color);
+  background-color: var(--main-light);
 }
 
 li.active{
-  background-color: var(--main-light-color);
+  background-color: var(--main-light);
 }
 
 .navbar form{
@@ -59,6 +81,6 @@ li.active{
 }
 
 article{
-  background-image: url("../img/bg_sliver.jpg");
+  /* background-image: url("../img/bg_sliver.jpg"); */
   padding-bottom: 400px;
 }
