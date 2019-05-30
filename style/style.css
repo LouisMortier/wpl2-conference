@@ -21,9 +21,9 @@ h3, h4{
   font-family: 'Lalezar', sans-serif;
 }
 
-/* nav{
+nav{
   background-color: var(--main-lighter);
-} */
+}
 
 .navbar{
   padding: 0px 0.8rem;
@@ -68,9 +68,9 @@ h3, h4{
   color: white;
 }
 
-/* .nav-item{
+.nav-item{
   background-color: var(--main-lighter);
-}*/
+}
 
 .nav-item:hover{
   background-color: var(--main-lighter);
