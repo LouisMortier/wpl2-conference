@@ -12,14 +12,29 @@ html{
   font-family: 'Nunito', sans-serif;
 }
 
-nav{
-  background-color: var(--main-lighter);
+body{
+  background-color: var(--main-lightest);
+  /* background-image: url(../img/bg_sliver.jpg); */
 }
+
+h3, h4{
+  font-family: 'Lalezar', sans-serif;
+}
+
+/* nav{
+  background-color: var(--main-lighter);
+} */
 
 .navbar{
   padding: 0px 0.8rem;
   font-family: 'Nunito', sans-serif;
   font-weight: bold;
+}
+
+.brandtitle{
+  color: black;
+  font-family: 'Lalezar', sans-serif;
+  font-size: 2.8rem;
 }
 
 .navbar-toggler{
@@ -46,22 +61,26 @@ nav{
 
 .nav-link:hover{
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 .active>.nav-link{
   color: white;
 }
 
-.nav-item{
+/* .nav-item{
+  background-color: var(--main-lighter);
+}*/
+
+.nav-item:hover{
   background-color: var(--main-lighter);
 }
 
-.nav-item:hover{
+li.active{
   background-color: var(--main-light);
 }
 
-li.active{
+li.active:hover{
   background-color: var(--main-light);
 }
 
@@ -89,9 +108,9 @@ article{
 
 /* FOOTER */
 
-footer{
+/* footer{
   background-color: var(--main-lighter);
-}
+} */
 
 footer h4{
   padding-top: 10px;
