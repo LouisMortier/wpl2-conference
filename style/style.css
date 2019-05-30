@@ -12,26 +12,22 @@ html{
   font-family: 'Nunito', sans-serif;
 }
 
-body{
-  background-color: var(--main-lightest);
-}
-
 nav{
   background-color: var(--main-lighter);
 }
 
 .navbar{
-  padding: 0px;
+  padding: 0px 0.8rem;
   font-family: 'Nunito', sans-serif;
   font-weight: bold;
 }
 
-.navbar-brand{
-  padding-left: 0.8rem;
+.navbar-toggler{
+  border: 1px solid var(--main-light);
 }
 
-.navbar-toggler{
-  margin-right: 0.8rem;
+.navbar-toggler-icon{
+  color: white;
 }
 
 .nav-item {
@@ -78,5 +74,41 @@ li.active{
 }
 
 article{
-  padding-bottom: 400px;
+  padding-bottom: 20px;
 }
+
+#carousel{
+  padding: 40px 0px;
+}
+
+/* ABOUT */
+
+#about>div>div>div{
+  width: 350px;
+}
+
+/* FOOTER */
+
+footer{
+  background-color: var(--main-lighter);
+}
+
+footer h4{
+  padding-top: 10px;
+}
+
+hr{
+  margin: 15px -15px;
+}
+
+.fab{
+  color: black;
+  padding: 3px;
+  font-size: 1.5rem;
+}
+
+.fab:hover{
+  background-color: var(--main-light);
+}
+
+/* FOOTER */
