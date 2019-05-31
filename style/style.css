@@ -98,7 +98,7 @@ li.active:hover{
   font-size: 1.2rem;
 }
 
-article{
+main article{
   padding-bottom: 20px;
 }
 
@@ -137,3 +137,44 @@ hr{
 }
 
 /* FOOTER */
+
+#spreker{
+  padding: 5px;
+}
+
+#spreker>.infocard{
+  border: var(--main-light) 1px solid;
+  padding: 10px;
+}
+
+#spreker .row{
+  padding: 0px 10px;
+}
+
+#spreker .col-2{
+  padding: 7px 10px;
+  border: black 1px solid;
+  border-radius: 5px;
+}
+
+#spreker .far{
+  margin: 0 auto;
+  color: black;
+}
+
+#spreker .col-8{
+  background-color: var(--main-light);
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+}
+
+#spreker a{
+  color: white;
+  display: block;
+}
+
+#spreker a:hover{
+  text-decoration: none;
+  color: white;
+}
