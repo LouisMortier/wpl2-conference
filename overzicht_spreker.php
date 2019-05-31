@@ -120,7 +120,7 @@ if(!$resBrowseSprekers = $mysqli->query($sqlBrowseSprekers)){
                                 print('<div class="col-2 text-center">');
                                     print("<a href='likecode.php?id=".$spID."'><i class='far fa-heart'></i></a>");
                                 print('</div>');
-                                print('<div class="col-8 offset-2">');
+                                print('<div class="col-9 offset-1">');
                                     print("<a href='detail_spreker.php?id=".$spID."'>More info</a>");
                                 print('</div>');
                             print('</div>');

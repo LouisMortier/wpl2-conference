@@ -17,7 +17,7 @@ body{
   /* background-image: url(../img/bg_sliver.jpg); */
 }
 
-h3, h4{
+h3, h4, h5{
   font-family: 'Lalezar', sans-serif;
 }
 
@@ -138,6 +138,8 @@ hr{
 
 /* FOOTER */
 
+/* SPREKER */
+
 #spreker{
   padding: 5px;
 }
@@ -145,6 +147,10 @@ hr{
 #spreker>.infocard{
   border: var(--main-light) 1px solid;
   padding: 10px;
+}
+
+#spreker>.infocard>section{
+  padding: 5px 0px;
 }
 
 #spreker .row{
@@ -162,19 +168,32 @@ hr{
   color: black;
 }
 
-#spreker .col-8{
+#spreker .col-9{
   background-color: var(--main-light);
   border-radius: 5px;
   color: white;
+}
+
+#spreker .col-9 a{
+  padding-top: 8px;
   text-align: center;
+  display: block;
 }
 
 #spreker a{
   color: white;
-  display: block;
 }
 
 #spreker a:hover{
   text-decoration: none;
   color: white;
+}
+
+#spreker header{
+  background-color: var(--main-dark);
+}
+
+#spreker img{
+  opacity: 0.6;
+  filter: grayscale(100%);
 }
