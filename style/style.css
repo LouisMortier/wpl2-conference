@@ -106,6 +106,24 @@ main article{
   padding: 40px 0px;
 }
 
+/* ORDER */
+
+#order{
+  background-color: var(--main-darker);
+  color: white;
+}
+
+#order a{
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+#order a:hover{
+  background-color: var(--main-darkest);
+}
+
 /* ABOUT */
 
 #about>div>div>div{
@@ -196,4 +214,8 @@ hr{
 #spreker img{
   opacity: 0.6;
   filter: grayscale(100%);
+}
+
+#spreker h5{
+  padding-top: 10px;
 }

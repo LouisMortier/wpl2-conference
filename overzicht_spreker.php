@@ -79,9 +79,9 @@ if(!$resBrowseSprekers = $mysqli->query($sqlBrowseSprekers)){
         </nav>
         <section id="order">
             <div class="row">
-                <div class="col-1 offset-1">Newest</div>
-                <div class="col-1">Most likes</div>
-                <div class="col-1">Most popular</div>
+                <div class="col-1 offset-1"><a href="#">Newest</a></div>
+                <div class="col-1"><a href="#">Most likes</a></div>
+                <div class="col-1"><a href="#">Most popular</a></div>
             </div>
         </section>
 </header>
