@@ -92,6 +92,12 @@ li.active:hover{
   padding: 0px;
 }
 
+/* NAV */
+
+.fa-search{
+  font-size: 1.2rem;
+}
+
 article{
   padding-bottom: 20px;
 }
