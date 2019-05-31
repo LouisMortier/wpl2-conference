@@ -156,6 +156,10 @@ hr{
 
 /* FOOTER */
 
+footer{
+  background-color: var(--main-lighter);
+}
+
 /* SPREKER */
 
 #spreker{
@@ -218,4 +222,29 @@ hr{
 
 #spreker h5{
   padding-top: 10px;
+}
+
+/* TABLES */
+
+#tables table{
+  margin: 50px 0px;
+}
+
+#tables thead{
+  width: 100%;
+  background-color: var(--main-darkest);
+  color: white;
+}
+
+#tables th{
+  border-radius: 6px 6px 0px 0px;
+}
+
+#tables tbody{
+  text-transform: uppercase;
+}
+
+#tables .timestamp{
+  width: 125px;
+  font-weight: bold;
 }

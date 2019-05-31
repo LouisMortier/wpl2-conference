@@ -65,7 +65,7 @@ if(!$resSessies104 = $mysqli->query($sqlSessies104)){
 <body>
     <header>
         <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php">
                 <img src="img/multilogoicon.svg" width="100" height="100" class="d-inline-block align-center" alt="">
                 <span class="brandtitle">MULTI MANIA</span>
               </a>
@@ -97,12 +97,15 @@ if(!$resSessies104 = $mysqli->query($sqlSessies104)){
                 </form>
             </div>
         </nav>
+        </header>
         <main>
-        <div class="container">
-        <table id="zaal100" class="table table-striped">
+        <div id="tables" class="container">
+        
+        <table id="zaal100" class="table table-striped table-borderless table-responsive-lg">
         <thead>
             <tr>
-                <th>Zaal 1</th>
+                <th>Pixel 1</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -112,18 +115,20 @@ if(!$resSessies104 = $mysqli->query($sqlSessies104)){
                 $sesStart = $row['start'];
                 
                 echo"<tr>";
-                echo"<td>".$sesStart."</td>";
+                echo"<td class='timestamp'>".$sesStart."</td>";
                 echo"<td>".$sesTitle."</td>";
                 echo"</tr>";
-                echo"</tbody>";
+                
             }
             ?>
+            </tbody>
         </table>
 
-        <table id="zaal101" class="table table-striped">
+        <table id="zaal101" class="table table-striped table-borderless table-responsive-lg">
         <thead>
             <tr>
-                <th>Zaal 2</th>
+                <th>Pixel 2</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -133,18 +138,19 @@ if(!$resSessies104 = $mysqli->query($sqlSessies104)){
                 $sesStart = $row['start'];
                 
                 echo"<tr>";
-                echo"<td>".$sesStart."</td>";
+                echo"<td class='timestamp'>".$sesStart."</td>";
                 echo"<td>".$sesTitle."</td>";
                 echo"</tr>";
-                echo"</tbody>";
             }
             ?>
+            </tbody>
         </table>
 
-        <table id="zaal102" class="table table-striped">
+        <table id="zaal102" class="table table-striped table-borderless table-responsive-lg">
         <thead>
             <tr>
-                <th>Zaal 3</th>
+                <th>Pixel 3</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -154,18 +160,19 @@ if(!$resSessies104 = $mysqli->query($sqlSessies104)){
                 $sesStart = $row['start'];
                 
                 echo"<tr>";
-                echo"<td>".$sesStart."</td>";
+                echo"<td class='timestamp'>".$sesStart."</td>";
                 echo"<td>".$sesTitle."</td>";
                 echo"</tr>";
-                echo"</tbody>";
             }
             ?>
+            </tbody>
         </table>
 
-        <table id="zaal103" class="table table-striped">
+        <table id="zaal103" class="table table-striped table-borderless table-responsive-lg">
         <thead>
             <tr>
-                <th>Zaal 4</th>
+                <th>Pixel 4</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -175,18 +182,19 @@ if(!$resSessies104 = $mysqli->query($sqlSessies104)){
                 $sesStart = $row['start'];
                 
                 echo"<tr>";
-                echo"<td>".$sesStart."</td>";
+                echo"<td class='timestamp'>".$sesStart."</td>";
                 echo"<td>".$sesTitle."</td>";
                 echo"</tr>";
-                echo"</tbody>";
             }
             ?>
+            </tbody>
         </table>
 
-        <table id="zaal104" class="table table-striped">
+        <table id="zaal104" class="table table-striped table-borderless table-responsive-lg">
         <thead>
             <tr>
-                <th>Zaal 5</th>
+                <th>Pixel 5</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -196,17 +204,53 @@ if(!$resSessies104 = $mysqli->query($sqlSessies104)){
                 $sesStart = $row['start'];
                 
                 echo"<tr>";
-                echo"<td>".$sesStart."</td>";
+                echo"<td class='timestamp'>".$sesStart."</td>";
                 echo"<td>".$sesTitle."</td>";
                 echo"</tr>";
-                echo"</tbody>";
             }
             ?>
+            </tbody>
         </table>
 
 
         </div>
         </main>
+
+        <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <h4>Footer menu one</h4>
+                    <hr />
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum maiores nisi pariatur nobis mollitia tempore molestiae. Dicta, accusantium repellendus. Veniam aperiam quo laudantium hic modi vitae doloremque animi reiciendis optio!</p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <h4>Footer menu two</h4>
+                    <hr />
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum maiores nisi pariatur nobis mollitia tempore molestiae. Dicta, accusantium repellendus. Veniam aperiam quo laudantium hic modi vitae doloremque animi reiciendis optio!</p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <h4>Footer menu three</h4>
+                    <hr />
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum maiores nisi pariatur nobis mollitia tempore molestiae. Dicta, accusantium repellendus. Veniam aperiam quo laudantium hic modi vitae doloremque animi reiciendis optio!</p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <h4>Footer menu four</h4>
+                    <hr />
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum maiores nisi pariatur nobis mollitia tempore molestiae. Dicta, accusantium repellendus. Veniam aperiam quo laudantium hic modi vitae doloremque animi reiciendis optio!</p>
+                    <div class="row text-center" id="contact">
+                        <div class="col-4"><a href="#"><i class="fab fa-facebook-square"></i></a></div>
+                        <div class="col-4"><a href="#"><i class="fab fa-linkedin"></i></a></div>
+                        <div class="col-4"><a href="#"><i class="fab fa-twitter-square"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
 </body>
