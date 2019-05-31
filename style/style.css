@@ -8,40 +8,42 @@
   --main-gray: #707070;
 }
 
-html{
+html {
   font-family: 'Nunito', sans-serif;
 }
 
-body{
+body {
   background-color: var(--main-lightest);
   /* background-image: url(../img/bg_sliver.jpg); */
 }
 
-h3, h4, h5{
+h3,
+h4,
+h5 {
   font-family: 'Lalezar', sans-serif;
 }
 
-nav{
+nav {
   background-color: var(--main-lighter);
 }
 
-.navbar{
+.navbar {
   padding: 0px 0.8rem;
   font-family: 'Nunito', sans-serif;
   font-weight: bold;
 }
 
-.brandtitle{
+.brandtitle {
   color: black;
   font-family: 'Lalezar', sans-serif;
   font-size: 2.8rem;
 }
 
-.navbar-toggler{
+.navbar-toggler {
   border: 1px solid var(--main-light);
 }
 
-.navbar-toggler-icon{
+.navbar-toggler-icon {
   color: white;
 }
 
@@ -51,7 +53,7 @@ nav{
   margin: 0 auto;
 }
 
-.nav-link{
+.nav-link {
   padding: 43px;
   margin: 0 auto;
   text-align: center;
@@ -59,74 +61,74 @@ nav{
   display: block;
 }
 
-.nav-link:hover{
+.nav-link:hover {
   text-decoration: none;
   color: black;
 }
 
-.active>.nav-link{
+.active>.nav-link {
   color: white;
 }
 
-.nav-item{
+.nav-item {
   background-color: var(--main-lighter);
 }
 
-.nav-item:hover{
+.nav-item:hover {
   background-color: var(--main-lighter);
 }
 
-li.active{
+li.active {
   background-color: var(--main-light);
 }
 
-li.active:hover{
+li.active:hover {
   background-color: var(--main-light);
 }
 
-.navbar form{
+.navbar form {
   padding: 0.8rem;
 }
 
-.btn{
+.btn {
   padding: 0px;
 }
 
 /* NAV */
 
-.fa-search{
+.fa-search {
   font-size: 1.2rem;
 }
 
-main article{
+main article {
   padding-bottom: 20px;
 }
 
-#carousel{
+#carousel {
   padding: 40px 0px;
 }
 
 /* ORDER */
 
-#order{
+#order {
   background-color: var(--main-darker);
   color: white;
 }
 
-#order a{
+#order a {
   text-align: center;
   text-decoration: none;
   color: white;
   display: block;
 }
 
-#order a:hover{
+#order a:hover {
   background-color: var(--main-darkest);
 }
 
 /* ABOUT */
 
-#about>div>div>div{
+#about>div>div>div {
   width: 350px;
 }
 
@@ -136,115 +138,115 @@ main article{
   background-color: var(--main-lighter);
 } */
 
-footer h4{
+footer h4 {
   padding-top: 10px;
 }
 
-hr{
+hr {
   margin: 15px -15px;
 }
 
-.fab{
+.fab {
   color: black;
   padding: 3px;
   font-size: 1.5rem;
 }
 
-.fab:hover{
+.fab:hover {
   background-color: var(--main-light);
 }
 
 /* FOOTER */
 
-footer{
+footer {
   background-color: var(--main-lighter);
 }
 
 /* SPREKER */
 
-#spreker{
+#spreker {
   padding: 5px;
 }
 
-#spreker>.infocard{
+#spreker>.infocard {
   border: var(--main-light) 1px solid;
   padding: 10px;
 }
 
-#spreker>.infocard>section{
+#spreker>.infocard>section {
   padding: 5px 0px;
 }
 
-#spreker .row{
+#spreker .row {
   padding: 0px 10px;
 }
 
-#spreker .col-2{
+#spreker .col-2 {
   padding: 7px 10px;
   border: black 1px solid;
   border-radius: 5px;
 }
 
-#spreker .far{
+#spreker .far {
   margin: 0 auto;
   color: black;
 }
 
-#spreker .col-9{
+#spreker .col-9 {
   background-color: var(--main-light);
   border-radius: 5px;
   color: white;
 }
 
-#spreker .col-9 a{
+#spreker .col-9 a {
   padding-top: 8px;
   text-align: center;
   display: block;
 }
 
-#spreker a{
+#spreker a {
   color: white;
 }
 
-#spreker a:hover{
+#spreker a:hover {
   text-decoration: none;
   color: white;
 }
 
-#spreker header{
+#spreker header {
   background-color: var(--main-dark);
 }
 
-#spreker img{
+#spreker img {
   opacity: 0.6;
   filter: grayscale(100%);
 }
 
-#spreker h5{
+#spreker h5 {
   padding-top: 10px;
 }
 
 /* TABLES */
 
-#tables table{
+#tables table {
   margin: 50px 0px;
 }
 
-#tables thead{
+#tables thead {
   width: 100%;
   background-color: var(--main-darkest);
   color: white;
 }
 
-#tables th{
+#tables th {
   border-radius: 6px 6px 0px 0px;
 }
 
-#tables tbody{
+#tables tbody {
   text-transform: uppercase;
 }
 
-#tables .timestamp{
+#tables .timestamp {
   width: 125px;
   font-weight: bold;
 }
