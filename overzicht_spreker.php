@@ -98,7 +98,7 @@ if(!$resBrowseSprekers = $mysqli->query($sqlBrowseSprekers)){
                     $spID = $row['idsprekers'];
 
                     if($row['afbeelding']==null){
-                        $spAfbeelding = "500.png";
+                        $spAfbeelding = "placeholder_500.svg";
                     }
                     else if($row['afbeelding']=="26mm.jpg"){
                         $spAfbeelding = "26m.jpg";
