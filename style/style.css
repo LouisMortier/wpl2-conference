@@ -1,15 +1,15 @@
 :root {
-  --main-lightest: #FCEFC0;
-  --main-lighter: #FAD882;
-  --main-light: #ED9B20;
-  --main-dark: #D76800;
-  --main-darker: #B34200;
+  --main-lightest: #fcefc0;
+  --main-lighter: #fad882;
+  --main-light: #ed9b20;
+  --main-dark: #d76800;
+  --main-darker: #b34200;
   --main-darkest: #882100;
   --main-gray: #707070;
 }
 
 html {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 body {
@@ -20,8 +20,10 @@ body {
 h3,
 h4,
 h5 {
-  font-family: 'Lalezar', sans-serif;
+  font-family: "Lalezar", sans-serif;
 }
+
+/* NAVBAR */
 
 nav {
   background-color: var(--main-lighter);
@@ -29,13 +31,13 @@ nav {
 
 .navbar {
   padding: 0px 0.8rem;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: bold;
 }
 
 .brandtitle {
   color: black;
-  font-family: 'Lalezar', sans-serif;
+  font-family: "Lalezar", sans-serif;
   font-size: 2.8rem;
 }
 
@@ -66,7 +68,7 @@ nav {
   color: black;
 }
 
-.active>.nav-link {
+.active > .nav-link {
   color: white;
 }
 
@@ -94,11 +96,11 @@ li.active:hover {
   padding: 0px;
 }
 
-/* NAV */
-
 .fa-search {
   font-size: 1.2rem;
 }
+
+/* END NAV */
 
 main article {
   padding-bottom: 20px;
@@ -128,7 +130,7 @@ main article {
 
 /* ABOUT */
 
-#about>div>div>div {
+#about > div > div > div {
   width: 350px;
 }
 
@@ -159,7 +161,14 @@ hr {
 /* FOOTER */
 
 footer {
+  text-align: justify;
   background-color: var(--main-lighter);
+}
+
+.multimania {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 /* SPREKER */
@@ -168,12 +177,12 @@ footer {
   padding: 5px;
 }
 
-#spreker>.infocard {
+#spreker > .infocard {
   border: var(--main-light) 1px solid;
   padding: 10px;
 }
 
-#spreker>.infocard>section {
+#spreker > .infocard > section {
   padding: 5px 0px;
 }
 
@@ -224,6 +233,10 @@ footer {
 
 #spreker h5 {
   padding-top: 10px;
+}
+
+#sprekercard {
+  padding-bottom: 1rem;
 }
 
 /* TABLES */

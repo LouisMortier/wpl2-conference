@@ -1,7 +1,11 @@
 <?php
+date_default_timezone_set('Europe/Brussels');
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+
 require_once("scripts/database.php");
 
-$sqlSessies100 = "SELECT idsessie, titel, start, omschrijving, afbeelding, zaalID FROM sessies ss INNER JOIN zalen z ON ss.zaalID = z.idzalen WHERE ss.zaalID = 100";
+$sqlSessies100 = "SELECT titel, start, zaalID FROM sessies ss INNER JOIN zalen z ON ss.zaalID = z.idzalen WHERE ss.zaalID = 100";
 
 if(!$resSessies100 = $mysqli->query($sqlSessies100)){
     echo "Oeps, een query foutje op DB voor opzoeken van sessies in zaalID 100";
@@ -10,7 +14,7 @@ if(!$resSessies100 = $mysqli->query($sqlSessies100)){
 }
 
 
-$sqlSessies101 = "SELECT idsessie, titel, start, omschrijving, afbeelding, zaalID FROM sessies ss INNER JOIN zalen z ON ss.zaalID = z.idzalen WHERE ss.zaalID = 101";
+$sqlSessies101 = "SELECT titel, start, zaalID FROM sessies ss INNER JOIN zalen z ON ss.zaalID = z.idzalen WHERE ss.zaalID = 101";
 
 if(!$resSessies101 = $mysqli->query($sqlSessies101)){
     echo "Oeps, een query foutje op DB voor opzoeken van sessies in zaalID 101";
@@ -19,7 +23,7 @@ if(!$resSessies101 = $mysqli->query($sqlSessies101)){
 }
 
 
-$sqlSessies102 = "SELECT idsessie, titel, start, omschrijving, afbeelding, zaalID FROM sessies ss INNER JOIN zalen z ON ss.zaalID = z.idzalen WHERE ss.zaalID = 102";
+$sqlSessies102 = "SELECT titel, start, zaalID FROM sessies ss INNER JOIN zalen z ON ss.zaalID = z.idzalen WHERE ss.zaalID = 102";
 
 if(!$resSessies102 = $mysqli->query($sqlSessies102)){
     echo "Oeps, een query foutje op DB voor opzoeken van sessies in zaalID 102";
@@ -28,7 +32,7 @@ if(!$resSessies102 = $mysqli->query($sqlSessies102)){
 }
 
 
-$sqlSessies103 = "SELECT idsessie, titel, start, omschrijving, afbeelding, zaalID FROM sessies ss INNER JOIN zalen z ON ss.zaalID = z.idzalen WHERE ss.zaalID = 103";
+$sqlSessies103 = "SELECT titel, start, zaalID FROM sessies ss INNER JOIN zalen z ON ss.zaalID = z.idzalen WHERE ss.zaalID = 103";
 
 if(!$resSessies103 = $mysqli->query($sqlSessies103)){
     echo "Oeps, een query foutje op DB voor opzoeken van sessies in zaalID 103";
@@ -37,7 +41,7 @@ if(!$resSessies103 = $mysqli->query($sqlSessies103)){
 }
 
 
-$sqlSessies104 = "SELECT idsessie, titel, start, omschrijving, afbeelding, zaalID FROM sessies ss INNER JOIN zalen z ON ss.zaalID = z.idzalen WHERE ss.zaalID = 104";
+$sqlSessies104 = "SELECT titel, start, zaalID FROM sessies ss INNER JOIN zalen z ON ss.zaalID = z.idzalen WHERE ss.zaalID = 104";
 
 if(!$resSessies104 = $mysqli->query($sqlSessies104)){
     echo "Oeps, een query foutje op DB voor opzoeken van sessies in zaalID 104";

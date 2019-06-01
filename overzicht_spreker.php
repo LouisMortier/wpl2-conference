@@ -1,23 +1,12 @@
 <?php
+date_default_timezone_set('Europe/Brussels');
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+
 require_once("scripts/database.php");
 
-// //query voor mijn eigen playlists gaan maken
-// $sqlMijnPlaylist = "SELECT playlistid, titel from savedplaylist s INNER JOIN playlist p ON s.playlistid = p.idplaylist";
 
-//query voor alle playlists te gaan maken
-$sqlBrowseSprekers = "SELECT DISTINCT idsprekers, voornaam, naam, sp.afbeelding, bio, lanidID FROM sprekers sp INNER JOIN sessies ss ON sp.idsprekers = ss.sprekerID";
-
-
-// //query van mijn playlist uitvoeren om in NAV te plaatsen
-// if(!$resNAVMijnplaylist = $mysqli->query($sqlMijnPlaylist)){
-//     echo "Oeps, een query foutje op DB voor opzoeken eigen playlist";
-//     print("<p>Error: ".$mysqli->error."</p>");
-//     exit();
-// }
-
-//query uitvoeren voor alle playlists om in centrum pagina te plaatsen
-//opvangen van de fouten
-
+$sqlBrowseSprekers = "SELECT DISTINCT idsprekers, voornaam, naam, sp.afbeelding, lanidID, (SELECT DISTINCT likecounter FROM sessies ss INNER JOIN sprekers sp ON ss.sprekerID = sp.idsprekers) as likes FROM sprekers sp INNER JOIN sessies ss ON sp.idsprekers = ss.sprekerID";
 
 if(!$resBrowseSprekers = $mysqli->query($sqlBrowseSprekers)){
     echo "Oeps, een query foutje op DB voor opzoeken alle playlist";
@@ -89,13 +78,11 @@ if(!$resBrowseSprekers = $mysqli->query($sqlBrowseSprekers)){
     <div class="container">
         <div class="row">
             <?php
-                //zolang er resultaten zijn uit de query, steek je ze in de array 'row'
                 while ($row = $resBrowseSprekers->fetch_assoc()) {
-                    //eerst tijdelijke vars opvullen
                     $spVoornaam = $row['voornaam'];
                     $spNaam = $row['naam'];
-                    $spBio = $row['bio'];
                     $spID = $row['idsprekers'];
+                    $spLikes = $row['likes'];
 
                     if($row['afbeelding']==null){
                         $spAfbeelding = "placeholder_500.svg";
@@ -114,8 +101,15 @@ if(!$resBrowseSprekers = $mysqli->query($sqlBrowseSprekers)){
                                 print('<img src="img/speakers/x500/' . $spAfbeelding . '" class="img-fluid w-100" />');
                             print('</header>');
                             print('</a>');
-                            print('<h5>'.$spVoornaam.' '.$spNaam.'</h5>');
-                            print('<section>' . $spBio . '</section>');
+                            print('<div id="sprekercard" class="row">');
+                            if($spNaam == "Little Miss Robot Ghent"){
+                                print('<h5 class="col-8">'.$spVoornaam.''.$spNaam.'</h5>');
+                            }
+                            else{
+                                print('<h5 class="col-8">'.$spVoornaam.'<br />'.$spNaam.'</h5>');
+                            }
+                            print('<h5 class="col-4"><br />'.$spLikes.' likes</h5>');
+                            print('</div>');
                             print('<div class="row">');
                                 print('<div class="col-2 text-center">');
                                     print("<a href='likecode.php?id=".$spID."'><i class='far fa-heart'></i></a>");
