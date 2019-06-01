@@ -17,6 +17,8 @@ body {
   /* background-image: url(../img/bg_sliver.jpg); */
 }
 
+h1,
+h2,
 h3,
 h4,
 h5 {
@@ -148,13 +150,13 @@ hr {
   margin: 15px -15px;
 }
 
-.fab {
+#contact .fab {
   color: black;
   padding: 3px;
   font-size: 1.5rem;
 }
 
-.fab:hover {
+#contact .fab:hover {
   background-color: var(--main-light);
 }
 
@@ -190,17 +192,6 @@ footer {
   padding: 0px 10px;
 }
 
-#spreker .col-2 {
-  padding: 7px 10px;
-  border: black 1px solid;
-  border-radius: 5px;
-}
-
-#spreker .far {
-  margin: 0 auto;
-  color: black;
-}
-
 #spreker .col-9 {
   background-color: var(--main-light);
   border-radius: 5px;
@@ -226,17 +217,67 @@ footer {
   background-color: var(--main-dark);
 }
 
-#spreker img {
-  opacity: 0.6;
-  filter: grayscale(100%);
+#sprekercard header {
+  background-color: var(--main-dark);
+}
+
+.img-fluid {
+  opacity: 0.7;
+  filter: grayscale(80%);
 }
 
 #spreker h5 {
   padding-top: 10px;
 }
 
+.btn {
+  margin-top: 5px;
+  padding: 0px 5px;
+}
+
 #sprekercard {
-  padding-bottom: 1rem;
+  padding: 1rem;
+}
+
+#sprekercard img {
+  height: auto;
+  width: 100%;
+  padding: 0px 0px;
+}
+
+#buttns {
+  margin-top: 15px;
+}
+
+#sprekercard > .row > div {
+  padding: 5px 15px;
+}
+
+#sprekercard h1 {
+  font-weight: bold;
+  font-size: 3.4rem;
+  margin: 0 auto;
+}
+
+#sprekercard p {
+  text-align: justify;
+}
+
+#sprekercard .buttn {
+  margin: 0px 10px;
+}
+
+.buttn {
+  max-width: 15%;
+  padding: 5px 0px;
+  border: black 1px solid;
+  border-radius: 5px;
+}
+
+.far,
+.fab {
+  margin: 0 auto;
+  color: black;
 }
 
 /* TABLES */

@@ -85,7 +85,7 @@ if(!$resBrowseSprekers = $mysqli->query($sqlBrowseSprekers)){
                     $spLikes = $row['likes'];
 
                     if($row['afbeelding']==null){
-                        $spAfbeelding = "placeholder_500.svg";
+                        $spAfbeelding = "placeholder.svg";
                     }
                     else if($row['afbeelding']=="26mm.jpg"){
                         $spAfbeelding = "26m.jpg";
@@ -96,11 +96,13 @@ if(!$resBrowseSprekers = $mysqli->query($sqlBrowseSprekers)){
 
                     print('<article class="col-3" id="spreker">');
                         print('<div class="infocard">');
-                            print('<a href="playlist.php?idplaylist=' . $spID . '">');
-                            print('<header>');
-                                print('<img src="img/speakers/x500/' . $spAfbeelding . '" class="img-fluid w-100" />');
-                            print('</header>');
+                        print('<header>');
+                            print('<a href="detail_spreker.php?id=' . $spID . '">');
+                            
+                                print('<img src="img/speakers/x250/' . $spAfbeelding . '" class="img-fluid w-100" />');
+                            
                             print('</a>');
+                            print('</header>');
                             print('<div id="sprekercard" class="row">');
                             if($spNaam == "Little Miss Robot Ghent"){
                                 print('<h5 class="col-8">'.$spVoornaam.''.$spNaam.'</h5>');
@@ -111,7 +113,7 @@ if(!$resBrowseSprekers = $mysqli->query($sqlBrowseSprekers)){
                             print('<h5 class="col-4"><br />'.$spLikes.' likes</h5>');
                             print('</div>');
                             print('<div class="row">');
-                                print('<div class="col-2 text-center">');
+                                print('<div class="buttn col-2 text-center">');
                                     print("<a href='likecode.php?id=".$spID."'><i class='far fa-heart'></i></a>");
                                 print('</div>');
                                 print('<div class="col-9 offset-1">');

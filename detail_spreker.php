@@ -4,39 +4,32 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
 require("scripts/database.php");
+
+$sqlToonSpreker = 
+"SELECT DISTINCT idsprekers, voornaam, naam, sp.afbeelding, bio, lanidID, 
+(SELECT DISTINCT likecounter FROM sessies ss INNER JOIN sprekers sp ON ss.sprekerID = sp.idsprekers) as likes 
+FROM sprekers sp INNER JOIN sessies ss ON sp.idsprekers = ss.sprekerID 
+WHERE idsprekers = ?";
+
 if(isset($_GET['id'])){
+    $gekozenID = $_GET['id'];
 }
-$sqlToonSpreker = "SELECT idsprekers, voornaam, naam, sp.afbeelding, bio, lanidID FROM sprekers sp INNER JOIN sessies ss ON sp.idsprekers = ss.likecounter WHERE idsprekers = '?'";
-
-
-if(!$resToonSpreker = $mysqli->query($sqlToonSpreker)){
-    echo "Oeps, een query foutje op DB voor opzoeken gekozen spreker";
-    print("<p>Error: ".$mysqli->error."</p>");
-    exit();
+else{
+    $gekozenID = -1;
 }
 
+$stmtInfo = $mysqli->prepare($sqlToonSpreker);
 
+$stmtInfo->bind_param("i", $parID1);
+    $parID1 = $gekozenID;
 
-$stmtSpreker = $mysqli->prepare($sqlToonSpreker);
+$stmtInfo->execute();
+$resultInfo = $stmtInfo->get_result();
+$rowinfospreker = $resultInfo->fetch_assoc();
 
-    $stmtSpreker->execute();
-
-    $resultSpreker = $stmtSpreker->get_result();
-
-    $rowSpreker = $resultSpreker->fetch_assoc();
-
-
-
-
-// if(isset($_GET["id"])==true){
-//     $sqlToonSpreker = "SELECT idsprekers, voornaam, naam, sp.afbeelding, bio, lanidID FROM sprekers sp INNER JOIN sessies ss ON sp.idsprekers = ss.sprekerID";
-
-// if(!$resToonSpreker = $mysqli->query($sqlToonSpreker)){
-//     echo "Oeps, een query foutje op DB voor opzoeken alle playlist";
-//     print("<p>Error: ".$mysqli->error."</p>");
-//     exit();
-// }
-// }
+// print("<pre>");
+// print_r($_GET);
+// print("</pre>");
 
 ?>
 
@@ -136,16 +129,72 @@ $stmtSpreker = $mysqli->prepare($sqlToonSpreker);
     </header>
     <main>
         <div class="container">
+        <div class="backbtn">
+        <a href="overzicht_spreker.php"><button type="button" class="btn btn-secondary">Back</button></a>
+        </div>
+        <div id="sprekercard">
             <div class="row">
                 <div class="col-4">
                     <?php
-                    if(isset($_GET['id'])){
-                    print($rowSpreker['sp.afbeelding']);
-                    print("<p>HELP</p>");
+                    if($rowinfospreker['afbeelding']==null){
+                        $spAfb = "placeholder.svg";
                     }
+                    else if($rowinfospreker['afbeelding']=="26mm.jpg"){
+                        $spAfb = "26m.jpg";
+                    }
+                    else{
+                        $spAfb = $rowinfospreker['afbeelding'];
+                    }
+                    
+                    $spLikes = $rowinfospreker['likes'];
+                    $spID = $rowinfospreker['idsprekers'];
+                    
+                    print('<header>');
+                    print('<img src="img/speakers/x500/'.$spAfb.'" class="img-fluid col-12"/>');
+                    print('</header>');
+                    print('<div class="row justify-content-end" id="buttns">');
+                    print('<div class="col-8">');
+                    print('<div class="row">');
+                    print('<div class="buttn col-3 text-center">');
+                    print("<a href='likecode.php?id=".$spID."'><i class='far fa-heart'></i></a>");
+                    print('</div>');
+                    print('<div class="buttn col-3 text-center">');
+                    print("<a href='#facebook'><i class='fab fa-facebook-f'></i></a>");
+                    print('</div>');
+                    print('<div class="buttn col-3 text-center">');
+                    print("<a href='#twitter'><i class='fab fa-twitter'></i></a>");
+                    print('</div>');
+                    print('</div>');
+                    print('</div>');
+                    print('<h5 class="col-3">'.$spLikes.' likes</h5>');
+                    
+                    print('</div>');
+                    ?>
+                </div>
+                <div class="col-8">
+                    <?php
+                    $spNaam = $rowinfospreker['voornaam']." ".$rowinfospreker['naam'];
+                    if(($rowinfospreker['lanidID']) == 1){
+                        $spLand = "België";
+                    }else if(($rowinfospreker['lanidID']) == 2){
+                        $spLand = "Nederland";
+                    }else if(($rowinfospreker['lanidID']) == 3){
+                        $spLand = "Verenigd Koninkrijk";
+                    }else if(($rowinfospreker['lanidID']) == 4){
+                        $spLand = "Verenigde Staten";
+                    }
+                    $spBio = $rowinfospreker['bio'];
+                    
+                    print('<h1 class="col-12">'.$spNaam.'</h1>');
+                    print('<h2 class="col-12">'.$spLand.'</h2><br />');
+                    print('<br /><h4 class="col-12">Bio</h4>');
+                    print('<p class="col-12">'.$spBio.'</p>');
+                    
                     ?>
                 </div>
             </div>
+        </div>
+        </div>
         </div>
 </main>
 
