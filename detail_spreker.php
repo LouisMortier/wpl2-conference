@@ -188,7 +188,9 @@ $rowinfospreker = $resultInfo->fetch_assoc();
                     print('<h1 class="col-12">'.$spNaam.'</h1>');
                     print('<h2 class="col-12">'.$spLand.'</h2><br />');
                     print('<br /><h4 class="col-12">Bio</h4>');
-                    print('<p class="col-12">'.$spBio.'</p>');
+                    print('<p class="col-12">'.$spBio.'</p><br />');
+                    print('<br /><h4 class="col-12">Socials</h4>');
+                    print('<p class="col-12">'.$spBio.'</p><br />');
                     
                     ?>
                 </div>
