@@ -8,7 +8,7 @@ require("scripts/database.php");
 $sqlToonSessie = 
 "SELECT ss.idsessie, ss.titel, ss.start, ss.omschrijving, ss.afbeelding, ss.zaalID, ss.sprekerID, 
 (SELECT sp.voornaam FROM sprekers sp INNER JOIN sessies ss ON ss.sprekerID = sp.idsprekers WHERE ss.idsessie = ?) as voornaam,
-(SELECT sp.afbeelding FROM sprekers sp INNER JOIN sessies ss ON ss.sprekerID = sp.idsprekers WHERE ss.idsessie = ?) as afbeelding,
+(SELECT sp.afbeelding FROM sprekers sp INNER JOIN sessies ss ON ss.sprekerID = sp.idsprekers WHERE ss.idsessie = ?) as afb,
 (SELECT sp.naam FROM sprekers sp INNER JOIN sessies ss ON ss.sprekerID = sp.idsprekers WHERE ss.idsessie = ?) as naam
 FROM sessies ss INNER JOIN sprekers sp ON sp.idsprekers = ss.sprekerID 
 WHERE ss.idsessie = ?";
@@ -132,46 +132,57 @@ $rowinfosessie = $resultInfo->fetch_assoc();
     <main>
         <div class="container">
         <div class="backbtn">
-        <a href="overzicht_sessie.php"><button type="button" class="btn btn-secondary">Back</button></a>
+        <a href="overzicht_zalen.php"><button type="button" class="btn btn-secondary">Back</button></a>
         </div>
-        <div id="sprekercard">
+        <div id="card">
             <div class="row">
                     <?php
                     if($rowinfosessie['afbeelding']==null){
-                        $ssAfb = "placeholder.svg";
+                        $ssAfb = "banner_img_04.png";
                     }
-                    else if($rowinfosessie['afbeelding']=="26mm.jpg"){
-                        $ssAfb = "26m.jpg";
+
+                    if($rowinfosessie['zaalID']==100){
+                      $ssRoom = "Pixel 1 - Auditorium";
                     }
-                    else{
-                        $ssAfb = $rowinfosessie['afbeelding'];
+                    else if($rowinfosessie['zaalID']==101){
+                      $ssRoom = "Pixel 2";
+                    }else if($rowinfosessie['zaalID']==102){
+                      $ssRoom = "Pixel 3";
+                    }else if($rowinfosessie['zaalID']==103){
+                      $ssRoom = "Pixel 4";
+                    }else if($rowinfosessie['zaalID']==104){
+                      $ssRoom = "Pixel 5";
                     }
+
 
                     $ssNaam = $rowinfosessie['voornaam']." ".$rowinfosessie['naam'];
                     $ssID = $rowinfosessie['idsessie'];
                     $ssTitle = $rowinfosessie['titel'];
                     $ssStart = $rowinfosessie['start'];
+                    $ssBio = $rowinfosessie['omschrijving'];
+
                     
-                    print('<header class="row">');
-                    print('<div class="col-12">');
+                    print('<section id="sesheader" class="col-12">');
+                    print('<div>');
                     print('<h1>'.$ssTitle.'</h1>');
                     print('<h2>'.$ssNaam.'</h2>');
                     print('</div>');
-                    print('</header>');
+                    print('</section>');
 
-                    print('<footer class="col-12"');
-                    print('<div class="row justify-content-end" id="buttns">');
-                    print('<div class="buttn col-6 text-center">');
-                    print("<a href='#facebook'><i class='fab fa-facebook-f'></i></a>");
+                    print('<section id="sesmain" class="col-12">');
+                    print('<div class="row">');
+                    print('<div class="col-6 offset-6 text-right" id="sesbio">');
+                    print('<h4>'.$ssRoom.', '.$ssStart.'</h4>');
+                    print('<p>'.$ssBio.'</p>');
+                    print('<p>'.$ssBio.'</p>');
                     print('</div>');
-                    print('<div class="buttn col-6 text-center">');
-                    print("<a href='#twitter'><i class='fab fa-twitter'></i></a>");
+                    print('<div class="col-12" id="sesafb">');
+                    print('<img src="img/sessions/'.$ssAfb.'" class="img-fluid"/>');
+                    print('');
                     print('</div>');
                     print('</div>');
-                    print('</footer>');
+                    print('</section>');
 
-                    print('<br /><h4 class="col-12">Bio</h4>');
-                    print('<br /><h4 class="col-12">Socials</h4>');
                     
                     ?>
                 </div>

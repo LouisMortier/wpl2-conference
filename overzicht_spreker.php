@@ -103,7 +103,7 @@ if(!$resBrowseSprekers = $mysqli->query($sqlBrowseSprekers)){
                             
                             print('</a>');
                             print('</header>');
-                            print('<div id="sprekercard" class="row">');
+                            print('<div id="card" class="row">');
                             if($spNaam == "Little Miss Robot Ghent"){
                                 print('<h5 class="col-8">'.$spVoornaam.''.$spNaam.'</h5>');
                             }

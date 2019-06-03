@@ -122,7 +122,7 @@ if(!$resSessies104 = $mysqli->query($sqlSessies104)){
                 echo"<td class='timestamp'>";
                 echo"<a href='detail_sessie.php?id=".$sesID."'>".$sesStart;
                 echo"</td>";
-                echo"<td>";
+                echo"<td class='seslink'>";
                 echo"<a href='detail_sessie.php?id=".$sesID."'>".$sesTitle;
                 echo"</td>";
                 echo"</tr>";
@@ -151,7 +151,7 @@ if(!$resSessies104 = $mysqli->query($sqlSessies104)){
                 echo"<td class='timestamp'>";
                 echo"<a href='detail_sessie.php?id=".$sesID."'>".$sesStart;
                 echo"</td>";
-                echo"<td>";
+                echo"<td class='seslink'>";
                 echo"<a href='detail_sessie.php?id=".$sesID."'>".$sesTitle;
                 echo"</td>";
                 echo"</tr>";
@@ -179,7 +179,7 @@ if(!$resSessies104 = $mysqli->query($sqlSessies104)){
                 echo"<td class='timestamp'>";
                 echo"<a href='detail_sessie.php?id=".$sesID."'>".$sesStart;
                 echo"</td>";
-                echo"<td>";
+                echo"<td class='seslink'>";
                 echo"<a href='detail_sessie.php?id=".$sesID."'>".$sesTitle;
                 echo"</td>";
                 echo"</tr>";
@@ -207,7 +207,7 @@ if(!$resSessies104 = $mysqli->query($sqlSessies104)){
                 echo"<td class='timestamp'>";
                 echo"<a href='detail_sessie.php?id=".$sesID."'>".$sesStart;
                 echo"</td>";
-                echo"<td>";
+                echo"<td class='seslink'>";
                 echo"<a href='detail_sessie.php?id=".$sesID."'>".$sesTitle;
                 echo"</td>";
                 echo"</tr>";
@@ -235,7 +235,7 @@ if(!$resSessies104 = $mysqli->query($sqlSessies104)){
                 echo"<td class='timestamp'>";
                 echo"<a href='detail_sessie.php?id=".$sesID."'>".$sesStart;
                 echo"</td>";
-                echo"<td>";
+                echo"<td class='seslink'>";
                 echo"<a href='detail_sessie.php?id=".$sesID."'>".$sesTitle;
                 echo"</td>";
                 echo"</tr>";

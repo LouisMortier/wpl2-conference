@@ -132,7 +132,7 @@ $rowinfospreker = $resultInfo->fetch_assoc();
         <div class="backbtn">
         <a href="overzicht_spreker.php"><button type="button" class="btn btn-secondary">Back</button></a>
         </div>
-        <div id="sprekercard">
+        <div id="card">
             <div class="row">
                 <div class="col-4">
                     <?php
