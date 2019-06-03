@@ -7,4 +7,5 @@ if ($mysqli->connect_errno) {
 }
 else{
     //echo "gelukt";
+    $mysqli->set_charset('utf8');
 }

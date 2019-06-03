@@ -14,7 +14,11 @@ html {
 
 body {
   background-color: var(--main-lightest);
-  /* background-image: url(../img/bg_sliver.jpg); */
+}
+
+.bgimg {
+  background-image: url(../img/bg_sliver.jpg);
+  opacity: 40%;
 }
 
 h1,
@@ -70,7 +74,7 @@ nav {
   color: black;
 }
 
-.active > .nav-link {
+.active>.nav-link {
   color: white;
 }
 
@@ -132,7 +136,7 @@ main article {
 
 /* ABOUT */
 
-#about > div > div > div {
+#about>div>div>div {
   width: 350px;
 }
 
@@ -179,12 +183,12 @@ footer {
   padding: 5px;
 }
 
-#spreker > .infocard {
+#spreker>.infocard {
   border: var(--main-light) 1px solid;
   padding: 10px;
 }
 
-#spreker > .infocard > section {
+#spreker>.infocard>section {
   padding: 5px 0px;
 }
 
@@ -249,7 +253,7 @@ footer {
   margin-top: 15px;
 }
 
-#sprekercard > .row > div {
+#sprekercard>.row>div {
   padding: 5px 15px;
 }
 
@@ -265,6 +269,14 @@ footer {
 
 #sprekercard .buttn {
   margin: 0px 10px;
+}
+
+#sprekercard header.row {
+  background-color: transparent;
+}
+
+footer.col-12 {
+  background-color: transparent;
 }
 
 .buttn {

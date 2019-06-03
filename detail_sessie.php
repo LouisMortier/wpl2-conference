@@ -7,10 +7,11 @@ require("scripts/database.php");
 
 $sqlToonSessie = 
 "SELECT ss.idsessie, ss.titel, ss.start, ss.omschrijving, ss.afbeelding, ss.zaalID, ss.sprekerID, 
-(SELECT voornaam FROM sprekers sp INNER JOIN sprekers sp ON ss.sprekerID = sp.idsprekers WHERE sprekerID = ?) as voornaam,
-(SELECT sp.naam FROM sprekers sp INNER JOIN sprekers sp ON ss.sprekerID = sp.idsprekers WHERE sprekerID = ?) as naam
+(SELECT sp.voornaam FROM sprekers sp INNER JOIN sessies ss ON ss.sprekerID = sp.idsprekers WHERE ss.idsessie = ?) as voornaam,
+(SELECT sp.afbeelding FROM sprekers sp INNER JOIN sessies ss ON ss.sprekerID = sp.idsprekers WHERE ss.idsessie = ?) as afbeelding,
+(SELECT sp.naam FROM sprekers sp INNER JOIN sessies ss ON ss.sprekerID = sp.idsprekers WHERE ss.idsessie = ?) as naam
 FROM sessies ss INNER JOIN sprekers sp ON sp.idsprekers = ss.sprekerID 
-WHERE idsessie = ?";
+WHERE ss.idsessie = ?";
 
 if(isset($_GET['id'])){
     $gekozenID = $_GET['id'];
@@ -21,12 +22,16 @@ else{
 
 $stmtInfo = $mysqli->prepare($sqlToonSessie);
 
-$stmtInfo->bind_param("i", $parID1);
+$stmtInfo->bind_param("iiii", $parID1, $parID2, $parID3, $parID4);
     $parID1 = $gekozenID;
+    $parID2 = $gekozenID;
+    $parID3 = $gekozenID;
+    $parID4 = $gekozenID;
+
 
 $stmtInfo->execute();
 $resultInfo = $stmtInfo->get_result();
-$rowinfospreker = $resultInfo->fetch_assoc();
+$rowinfosessie = $resultInfo->fetch_assoc();
 
 ?>
 
@@ -127,67 +132,46 @@ $rowinfospreker = $resultInfo->fetch_assoc();
     <main>
         <div class="container">
         <div class="backbtn">
-        <a href="overzicht_spreker.php"><button type="button" class="btn btn-secondary">Back</button></a>
+        <a href="overzicht_sessie.php"><button type="button" class="btn btn-secondary">Back</button></a>
         </div>
         <div id="sprekercard">
             <div class="row">
-                <div class="col-4">
                     <?php
                     if($rowinfosessie['afbeelding']==null){
-                        $spAfb = "placeholder.svg";
+                        $ssAfb = "placeholder.svg";
                     }
                     else if($rowinfosessie['afbeelding']=="26mm.jpg"){
-                        $spAfb = "26m.jpg";
+                        $ssAfb = "26m.jpg";
                     }
                     else{
-                        $spAfb = $rowinfosessie['afbeelding'];
+                        $ssAfb = $rowinfosessie['afbeelding'];
                     }
+
+                    $ssNaam = $rowinfosessie['voornaam']." ".$rowinfosessie['naam'];
+                    $ssID = $rowinfosessie['idsessie'];
+                    $ssTitle = $rowinfosessie['titel'];
+                    $ssStart = $rowinfosessie['start'];
                     
-                    $spLikes = $rowinfosessie['likes'];
-                    $spID = $rowinfosessie['idsprekers'];
-                    
-                    print('<header>');
-                    print('<img src="img/speakers/x500/'.$spAfb.'" class="img-fluid col-12"/>');
-                    print('</header>');
-                    print('<div class="row justify-content-end" id="buttns">');
-                    print('<div class="col-8">');
-                    print('<div class="row">');
-                    print('<div class="buttn col-3 text-center">');
-                    print("<a href='likecode.php?id=".$spID."'><i class='far fa-heart'></i></a>");
+                    print('<header class="row">');
+                    print('<div class="col-12">');
+                    print('<h1>'.$ssTitle.'</h1>');
+                    print('<h2>'.$ssNaam.'</h2>');
                     print('</div>');
-                    print('<div class="buttn col-3 text-center">');
+                    print('</header>');
+
+                    print('<footer class="col-12"');
+                    print('<div class="row justify-content-end" id="buttns">');
+                    print('<div class="buttn col-6 text-center">');
                     print("<a href='#facebook'><i class='fab fa-facebook-f'></i></a>");
                     print('</div>');
-                    print('<div class="buttn col-3 text-center">');
+                    print('<div class="buttn col-6 text-center">');
                     print("<a href='#twitter'><i class='fab fa-twitter'></i></a>");
                     print('</div>');
                     print('</div>');
-                    print('</div>');
-                    print('<h5 class="col-3">'.$spLikes.' likes</h5>');
-                    
-                    print('</div>');
-                    ?>
-                </div>
-                <div class="col-8">
-                    <?php
-                    $spNaam = $rowinfosessie['voornaam']." ".$rowinfosessie['naam'];
-                    if(($rowinfosessie['lanidID']) == 1){
-                        $spLand = "België";
-                    }else if(($rowinfosessie['lanidID']) == 2){
-                        $spLand = "Nederland";
-                    }else if(($rowinfosessie['lanidID']) == 3){
-                        $spLand = "Verenigd Koninkrijk";
-                    }else if(($rowinfosessie['lanidID']) == 4){
-                        $spLand = "Verenigde Staten";
-                    }
-                    $spBio = $rowinfosessie['bio'];
-                    
-                    print('<h1 class="col-12">'.$spNaam.'</h1>');
-                    print('<h2 class="col-12">'.$spLand.'</h2><br />');
+                    print('</footer>');
+
                     print('<br /><h4 class="col-12">Bio</h4>');
-                    print('<p class="col-12">'.$spBio.'</p><br />');
                     print('<br /><h4 class="col-12">Socials</h4>');
-                    print('<p class="col-12">'.$spBio.'</p><br />');
                     
                     ?>
                 </div>
