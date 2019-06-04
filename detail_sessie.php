@@ -114,6 +114,9 @@ $rowinfosessie = $resultInfo->fetch_assoc();
             <li class="nav-item">
               <a class="nav-link" href="#">Tickets</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin/sessie.php">ADMIN</a>
+            </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input

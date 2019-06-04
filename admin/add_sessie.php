@@ -5,22 +5,26 @@ ini_set('display_errors', 'On');
 
 include('../scripts/database.php');
 
-print("<pre>");
-print_r($_POST);
-print("</pre>");
+// print("<pre>");
+// print_r($_POST);
+// print("</pre>");
 
     // maak een statement en bind de variabelen
-    $stmt = $mysqli->prepare("INSERT INTO `tblcinemas`( `name`, `location`) VALUES (?,?)");
+    $stmt = $mysqli->prepare("INSERT INTO `sessies`( `titel`, `start`, `omschrijving`, `afbeelding`, `zaalID`, `sprekerID`) VALUES (?,?,?,?,?,?)");
 
     if($mysqli->error){
         echo"<p>prepared statement failed: ".$mysqli->error."</p>";
         die;
     }
 
-    $stmt->bind_param("ss",$name,$location);
+    $stmt->bind_param("sissii",$sesTitel ,$sesStart ,$sesBio ,$sesAfb ,$sesZaalID ,$sesSprekerID);
 
-    $name=$_POST['name'];
-    $location=$_POST['location'];
+    $sesTitel = $_POST['titel'];
+    $sesStart = $_POST['start'];
+    $sesBio = $_POST['bio'];
+    $sesAfb = $_POST['afb'];
+    $sesZaalID = $_POST['zaal'];
+    $sesSprekerID = $_POST['spreker'];
 
     $stmt->execute();
 
@@ -32,11 +36,13 @@ print("</pre>");
         print("</pre>");
     }else{
         if($affected_rows>0){
-            header("location: cinemas.php");
+            header("location: sessie.php");
         }else{
             echo "Error: U hebt deze pagina niet bereikt via de juiste verwijzing.";
         }
+      }
     $stmt->close();
+      
 ?>
 
 <!DOCTYPE html>
@@ -97,5 +103,5 @@ print("</pre>");
         </div>
       </nav>
     </header>
-    </body>
-    </html>
+  </body>
+</html>

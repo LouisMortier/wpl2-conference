@@ -336,3 +336,15 @@ footer>.buttn {
   padding: 0;
   background-color: var(--main-light);
 }
+
+#overview {
+  padding: 0px 200px;
+}
+
+#omschrijving {
+  width: 30%;
+}
+
+.boldinfo {
+  font-weight: bold;
+}
