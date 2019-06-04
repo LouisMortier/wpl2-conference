@@ -134,14 +134,23 @@ $rowinfosessie = $resultInfo->fetch_assoc();
     </header>
     <main>
         <div class="container">
-        <div class="backbtn">
-        <a href="overzicht_zalen.php"><button type="button" class="btn btn-secondary">Back</button></a>
-        </div>
         <div id="card">
             <div class="row">
                     <?php
-                    if($rowinfosessie['afbeelding']==null){
-                        $ssAfb = "banner_img_04.png";
+                    if($rowinfosessie['start']=="10:30"){ 
+                        $ssAfb = "banner_img_01.png";
+                    }else if($rowinfosessie['start']=="11:30"){
+                      $ssAfb = "banner_img_02.png";
+                    }else if($rowinfosessie['start']=="12:30"){
+                      $ssAfb = "banner_img_03.png";
+                    }else if($rowinfosessie['start']=="14:00"){
+                      $ssAfb = "banner_img_04.png";
+                    }else if($rowinfosessie['start']=="15:00"){
+                      $ssAfb = "banner_img_03.png";
+                    }else if($rowinfosessie['start']=="16:00"){
+                      $ssAfb = "banner_img_02.png";
+                    }else if($rowinfosessie['start']=="17:00"){
+                      $ssAfb = "banner_img_01.png";
                     }
 
                     if($rowinfosessie['zaalID']==100){

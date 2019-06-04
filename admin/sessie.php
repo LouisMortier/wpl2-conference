@@ -114,9 +114,9 @@ if (!$result = $mysqli->query($sql)) {
     <main>
     <section id="overview">
         <h1>Alle sessies</h1>
-        <a href="add_sessie.php" class="btn btn-primary">ADD</a>
+        <a href="add_sessie.html" class="btn btn-primary">ADD</a>
         <table class="table table-striped">
-            <thead>
+            <thead class="thead-dark">
             <tr>
                 <th>ID</th>
                 <th>Titel</th>
