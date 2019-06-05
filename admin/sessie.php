@@ -115,6 +115,7 @@ if (!$result = $mysqli->query($sql)) {
     <section id="overview">
         <h1>Alle sessies</h1>
         <a href="add_sessie.html" class="btn btn-primary">ADD</a>
+        <p><br /></p>
         <table class="table table-striped">
             <thead class="thead-dark">
             <tr>
@@ -211,7 +212,7 @@ if (!$result = $mysqli->query($sql)) {
 
 
 
-                echo "<td><a href='delete.php?id=".$sesID."'>delete</a>  - <a href='editgui.php?id=".$sesID."'>edit</a> </td>";
+                echo "<td><a href='delete_sessie.php?id=".$sesID."'>delete</a>  - <a href='update_sessie_gui.php?id=".$sesID."'>edit</a> </td>";
                 echo "</tr>";
             }?>
             </tbody>

@@ -51,7 +51,7 @@
                             <a class="nav-link" href="#">Tickets</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">ADMIN</a>
+                            <a class="nav-link" href="sessie.php">ADMIN</a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
@@ -68,23 +68,23 @@
                 <form method="post" action="add_sessie.php" class="form-row">
                     <div class="form-group col-12">
                         <label for="titel">Sessie titel</label>
-                        <input type="text" name="titel" id="titel">
+                        <input type="text" class="form-control" name="titel" id="titel">
                     </div>
                     <div class="form-group col-2">
                         <label for="start">Starttijd</label>
-                        <input type="time" name="start" id="start">
+                        <input type="time" class="form-control" name="start" id="start">
                     </div>
                     <div class="form-group col-10">
                         <label for="bio">Omschrijving</label>
-                        <input type="text" name="bio" id="bio">
+                        <input type="text" class="form-control" name="bio" id="bio">
                     </div>
                     <div class="form-group col-6">
                         <label for="zaal">Zaal ID</label>
-                        <input type="number" name="zaal" id="zaal">
+                        <input type="number" class="form-control" name="zaal" id="zaal">
                     </div>
                     <div class="form-group col-6">
                         <label for="spreker">Spreker ID</label>
-                        <input type="number" name="spreker" id="spreker">
+                        <input type="number" class="form-control" name="spreker" id="spreker">
                     </div>
                     <div class="form-group col-12">
                         <input type="submit" class="btn btn-default" name="submit" value="Toevoegen">
