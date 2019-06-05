@@ -3,7 +3,7 @@ date_default_timezone_set('Europe/Brussels');
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-require_once("scripts/database.php");
+require("scripts/database.php");
 
 
 $sqlBrowseSprekers = "SELECT DISTINCT idsprekers, voornaam, naam, sp.afbeelding, lanidID, (SELECT DISTINCT likecounter FROM sessies ss INNER JOIN sprekers sp ON ss.sprekerID = sp.idsprekers) as likes FROM sprekers sp INNER JOIN sessies ss ON sp.idsprekers = ss.sprekerID";
@@ -117,7 +117,7 @@ if(!$resBrowseSprekers = $mysqli->query($sqlBrowseSprekers)){
                             print('</div>');
                             print('<div class="row">');
                                 print('<div class="buttn col-2 text-center">');
-                                    print("<a href='likecode.php?id=".$spID."'><i class='far fa-heart'></i></a>");
+                                    print("<a href='like_code.php?id=".$spID."?like=".$spLikes."'><i class='far fa-heart'></i></a>");
                                 print('</div>');
                                 print('<div class="col-9 offset-1">');
                                     print("<a href='detail_spreker.php?id=".$spID."'>More info</a>");
