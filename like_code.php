@@ -10,7 +10,7 @@ require("../scripts/database.php");
 print_r($_POST);
 print("</pre>");*/
 
-    $stmt = $mysqli->prepare("UPDATE sessies SET likecounter=? WHERE id=?");
+    $stmt = $mysqli->prepare("UPDATE sessies SET likecounter=? WHERE sprekerID=? SET foreign_key_checks = 0;");
     if($mysqli->error!==""){
         print("<p>Error: ".$mysqli->error."</p>");
     }

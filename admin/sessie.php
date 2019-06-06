@@ -12,6 +12,8 @@ if (!$result = $mysqli->query($sql)) {
 }
 
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -114,7 +116,7 @@ if (!$result = $mysqli->query($sql)) {
     <main>
     <section id="overview">
         <h1>Alle sessies</h1>
-        <a href="add_sessie.html" class="btn btn-primary">ADD</a>
+        <a href="add_sessie_gui.php" class="btn btn-primary">ADD</a>
         <p><br /></p>
         <table class="table table-striped">
             <thead class="thead-dark">

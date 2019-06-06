@@ -1,3 +1,22 @@
+<?php
+date_default_timezone_set("Europe/Brussels");
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+
+include('../scripts/database.php');
+
+$sqlSprekers = "SELECT ss.sprekerID, sp.voornaam, sp.naam FROM sessies ss INNER JOIN sprekers sp ON sp.idsprekers = ss.sprekerID";
+
+if (!$result = $mysqli->query($sqlSprekers)) {
+    echo "Oeps, een query foutje op DB voor opzoeken eigen playlist";
+    print("<p>Error: ".$mysqli->error."</p>");
+    exit();
+}
+
+$row = $result->fetch_assoc();
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,12 +98,49 @@
                         <input type="text" class="form-control" name="bio" id="bio">
                     </div>
                     <div class="form-group col-6">
-                        <label for="zaal">Zaal ID</label>
-                        <input type="number" class="form-control" name="zaal" id="zaal">
+                        <label for="zaal">Zaal</label>
+                        <select class="form-control" name="zaal">
+                        <?php
+
+                        $sqlZalen = "SELECT * FROM zalen";
+
+                        if (!$resZalen = $mysqli->query($sqlZalen)) {
+                            echo "Sorry, the website is experiencing problems";
+                            print("<p>Error: " . $mysqli->error . "</p>");
+                            exit;
+                        }
+
+                        while ($row = $resZalen->fetch_assoc()) {
+                            $tempID = $row['idzalen'];
+                            $tempNaam = $row['naam'];
+                            echo"<option value=".$tempID.">$tempNaam</option>";
+                        }
+
+                        ?>
+                        </select>
                     </div>
                     <div class="form-group col-6">
-                        <label for="spreker">Spreker ID</label>
-                        <input type="number" class="form-control" name="spreker" id="spreker">
+                        <label for="spreker">Spreker</label>
+                        <select class="form-control" name="spreker">
+                        <?php
+
+                        $sqlSprekers = "SELECT * FROM sprekers";
+
+                        if (!$resSprekers = $mysqli->query($sqlSprekers)) {
+                            echo "Sorry, the website is experiencing problems";
+                            print("<p>Error: " . $mysqli->error . "</p>");
+                            exit;
+                        }
+
+                        while ($row = $resSprekers->fetch_assoc()) {
+                            $tempID = $row['idzalen'];
+                            $tempVoornaam = $row['voornaam'];
+                            $tempNaam = $row['naam'];
+                            echo"<option value=".$tempID.">$tempVoornaam $tempNaam</option>";
+                        }
+
+                        ?>
+                        </select>
                     </div>
                     <div class="form-group col-12">
                         <input type="submit" class="btn btn-default" name="submit" value="Toevoegen">

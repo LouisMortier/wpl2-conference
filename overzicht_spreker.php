@@ -1,15 +1,11 @@
 <?php
-date_default_timezone_set('Europe/Brussels');
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
-
-require("scripts/database.php");
+require_once("scripts/database.php");
 
 
-$sqlBrowseSprekers = "SELECT DISTINCT idsprekers, voornaam, naam, sp.afbeelding, lanidID, (SELECT DISTINCT likecounter FROM sessies ss INNER JOIN sprekers sp ON ss.sprekerID = sp.idsprekers) as likes FROM sprekers sp INNER JOIN sessies ss ON sp.idsprekers = ss.sprekerID";
+$sqlBrowseSprekers = "SELECT DISTINCT sp.idsprekers, sp.voornaam, sp.naam, sp.afbeelding, sp.lanidID FROM sprekers sp INNER JOIN sessies ss ON sp.idsprekers = ss.sprekerID";
 
 if(!$resBrowseSprekers = $mysqli->query($sqlBrowseSprekers)){
-    echo "Oeps, een query foutje op DB voor opzoeken alle playlist";
+    echo "Oeps, een query foutje op DB voor opzoeken alle sprekers";
     print("<p>Error: ".$mysqli->error."</p>");
     exit();
 }
@@ -85,7 +81,6 @@ if(!$resBrowseSprekers = $mysqli->query($sqlBrowseSprekers)){
                     $spVoornaam = $row['voornaam'];
                     $spNaam = $row['naam'];
                     $spID = $row['idsprekers'];
-                    $spLikes = $row['likes'];
 
                     if($row['afbeelding']==null){
                         $spAfbeelding = "placeholder.svg";
@@ -113,11 +108,9 @@ if(!$resBrowseSprekers = $mysqli->query($sqlBrowseSprekers)){
                             else{
                                 print('<h5 class="col-8">'.$spVoornaam.'<br />'.$spNaam.'</h5>');
                             }
-                            print('<h5 class="col-4"><br />'.$spLikes.' likes</h5>');
                             print('</div>');
                             print('<div class="row">');
                                 print('<div class="buttn col-2 text-center">');
-                                    print("<a href='like_code.php?id=".$spID."?like=".$spLikes."'><i class='far fa-heart'></i></a>");
                                 print('</div>');
                                 print('<div class="col-9 offset-1">');
                                     print("<a href='detail_spreker.php?id=".$spID."'>More info</a>");

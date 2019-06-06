@@ -9,11 +9,9 @@ print("<pre>");
 print_r($_POST);
 print("</pre>");
 
-    if(isset($_POST["submit"])=='true'){
 
-      print("<pre>");
-print_r($_POST);
-print("</pre>");
+
+    if(isset($_POST["submit"])=='true'){
 
       $stmt = $mysqli->prepare("INSERT INTO `sessies`( `titel`, `start`, `omschrijving`, `afbeelding`, `zaalID`, `sprekerID`) VALUES (?,?,?,?,?,?)");
 
@@ -22,12 +20,12 @@ print("</pre>");
         die;
     }
 
-    $stmt->bind_param("sissii",$sesTitel ,$sesStart ,$sesBio ,$sesAfb ,$sesZaalID ,$sesSprekerID);
+    $stmt->bind_param("ssssii",$sesTitel ,$sesStart ,$sesBio ,$sesAfb ,$sesZaalID ,$sesSprekerID);
 
     $sesTitel = $_POST['titel'];
     $sesStart = $_POST['start'];
     $sesBio = $_POST['bio'];
-    $sesAfb = 'null';
+    $sesAfb = "null";
     $sesZaalID = $_POST['zaal'];
     $sesSprekerID = $_POST['spreker'];
 
@@ -43,7 +41,7 @@ print("</pre>");
         if($affected_rows>0){
             header("location: sessie.php");
         }else{
-            echo "Error: U hebt deze pagina niet bereikt via de juiste verwijzing.";
+            echo "Did not insert any data";
         }
       }
     $stmt->close();
