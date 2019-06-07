@@ -127,15 +127,8 @@ if (isset($_GET["id"]) == true) {
 
             <div class="form-group col-4">
                 <label for="start">Starttijd</label>
-                <select class="form-control" id="start" name="start">
-                    <option>10:30</option>
-                    <option>11:30</option>
-                    <option>12:30</option>
-                    <option>14:00</option>
-                    <option>15:00</option>
-                    <option>16:00</option>
-                    <option>17:00</option>
-                </select>
+                <input type="time" class="form-control" name="start">
+                
             </div>
 
             <div class="form-group col-8">
@@ -144,13 +137,48 @@ if (isset($_GET["id"]) == true) {
             </div>
             
             <div class="form-group col">
-                <label for="zaal">Zaal ID</label>
-                <input type="number" class="form-control" name="zaal" id="zaal">
-            </div>
-            <div class="form-group col">
-                <label for="spreker">Spreker ID</label>
-                <input type="number" class="form-control" name="spreker" id="spreker">
-            </div>
+                        <label for="zaal">Zaal</label>
+                        <select class="form-control" id="zaal" name="zaal">
+                            <option value="100">Pixel 1</option>
+                            <option value="101">Pixel 2</option>
+                            <option value="102">Pixel 3</option>
+                            <option value="103">Pixel 4</option>
+                            <option value="104">Pixel 5</option>
+                        </select>
+                    </div>
+                    <div class="form-group col">
+                        <label for="spreker">Spreker</label>
+                        <select class="form-control" name="spreker">
+                            <option value="2001">Aral Balkan</option>
+                            <option value="2002">Micheal O'Neill</option>
+                            <option value="2003">Ton Frederiks</option>
+                            <option value="2004">Frederic Lierman</option>
+                            <option value="2005">Brent Wilkey</option>
+                            <option value="2006">Jeremy Thorp</option>
+                            <option value="2007">Geert Coppens</option>
+                            <option value="2008">GRID VFX</option>
+                            <option value="2009">Ben Piquard</option>
+                            <option value="2010">Keith Peters</option>
+                            <option value="2011">Nicky Lauwerijssen</option>
+                            <option value="2012">Brendan Ciecko</option>
+                            <option value="2013">Xsens</option>
+                            <option value="2014">Bart Chanet</option>
+                            <option value="2015">Eboy</option>
+                            <option value="2016">Serge Jespers</option>
+                            <option value="2017">Christoph Rooms</option>
+                            <option value="2018">Donna Fenn</option>
+                            <option value="2019">Klaasjan Tukker</option>
+                            <option value="2020">Branden Hall</option>
+                            <option value="2021">Gill Cleeren</option>
+                            <option value="2022">Jasper Hesseling</option>
+                            <option value="2023">Doherty Fraser</option>
+                            <option value="2024">Katrijn Faket</option>
+                            <option value="2025">ADNERDS</option>
+                            <option value="2027">Veerle Pieters</option>
+                            <option value="2028">Little Miss Robot Ghent</option>
+                            <option value="2029">Floris Vos</option>
+                        </select>
+                    </div>
             
             <div class="form-group col-12">
                 <input type="submit" class="btn btn-secondary" name="submit" value="Update">

@@ -3,23 +3,14 @@ date_default_timezone_set("Europe/Brussels");
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-include('../scripts/database.php');
+require_once ('../scripts/database.php');
 
-$sqlSprekers = "SELECT ss.sprekerID, sp.voornaam, sp.naam FROM sessies ss INNER JOIN sprekers sp ON sp.idsprekers = ss.sprekerID";
-
-if (!$result = $mysqli->query($sqlSprekers)) {
-    echo "Oeps, een query foutje op DB voor opzoeken eigen playlist";
-    print("<p>Error: ".$mysqli->error."</p>");
-    exit();
-}
-
-$row = $result->fetch_assoc();
-
+$sqlString = "SELECT  idsessie, titel, start, omschrijving, zaalID, sprekerID, sp.naam, sp.voornaam, sp.afbeelding, z.naam as zaal 
+FROM sessies s INNER JOIN sprekers sp ON s.sprekerID = sp.idsprekers INNER JOIN zalen z ON s.zaalID = z.idzalen";
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <title>Multi Mania</title>
         <!-- Required meta tags -->
@@ -99,47 +90,45 @@ $row = $result->fetch_assoc();
                     </div>
                     <div class="form-group col-6">
                         <label for="zaal">Zaal</label>
-                        <select class="form-control" name="zaal">
-                        <?php
-
-                        $sqlZalen = "SELECT * FROM zalen";
-
-                        if (!$resZalen = $mysqli->query($sqlZalen)) {
-                            echo "Sorry, the website is experiencing problems";
-                            print("<p>Error: " . $mysqli->error . "</p>");
-                            exit;
-                        }
-
-                        while ($row = $resZalen->fetch_assoc()) {
-                            $tempID = $row['idzalen'];
-                            $tempNaam = $row['naam'];
-                            echo"<option value=".$tempID.">$tempNaam</option>";
-                        }
-
-                        ?>
+                        <select class="form-control" id="zaal" name="zaal">
+                            <option value="100">Pixel 1</option>
+                            <option value="101">Pixel 2</option>
+                            <option value="102">Pixel 3</option>
+                            <option value="103">Pixel 4</option>
+                            <option value="104">Pixel 5</option>
                         </select>
                     </div>
                     <div class="form-group col-6">
                         <label for="spreker">Spreker</label>
                         <select class="form-control" name="spreker">
-                        <?php
-
-                        $sqlSprekers = "SELECT * FROM sprekers";
-
-                        if (!$resSprekers = $mysqli->query($sqlSprekers)) {
-                            echo "Sorry, the website is experiencing problems";
-                            print("<p>Error: " . $mysqli->error . "</p>");
-                            exit;
-                        }
-
-                        while ($row = $resSprekers->fetch_assoc()) {
-                            $tempID = $row['idzalen'];
-                            $tempVoornaam = $row['voornaam'];
-                            $tempNaam = $row['naam'];
-                            echo"<option value=".$tempID.">$tempVoornaam $tempNaam</option>";
-                        }
-
-                        ?>
+                            <option value="2001">Aral Balkan</option>
+                            <option value="2002">Micheal O'Neill</option>
+                            <option value="2003">Ton Frederiks</option>
+                            <option value="2004">Frederic Lierman</option>
+                            <option value="2005">Brent Wilkey</option>
+                            <option value="2006">Jeremy Thorp</option>
+                            <option value="2007">Geert Coppens</option>
+                            <option value="2008">GRID VFX</option>
+                            <option value="2009">Ben Piquard</option>
+                            <option value="2010">Keith Peters</option>
+                            <option value="2011">Nicky Lauwerijssen</option>
+                            <option value="2012">Brendan Ciecko</option>
+                            <option value="2013">Xsens</option>
+                            <option value="2014">Bart Chanet</option>
+                            <option value="2015">Eboy</option>
+                            <option value="2016">Serge Jespers</option>
+                            <option value="2017">Christoph Rooms</option>
+                            <option value="2018">Donna Fenn</option>
+                            <option value="2019">Klaasjan Tukker</option>
+                            <option value="2020">Branden Hall</option>
+                            <option value="2021">Gill Cleeren</option>
+                            <option value="2022">Jasper Hesseling</option>
+                            <option value="2023">Doherty Fraser</option>
+                            <option value="2024">Katrijn Faket</option>
+                            <option value="2025">ADNERDS</option>
+                            <option value="2027">Veerle Pieters</option>
+                            <option value="2028">Little Miss Robot Ghent</option>
+                            <option value="2029">Floris Vos</option>
                         </select>
                     </div>
                     <div class="form-group col-12">

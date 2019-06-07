@@ -54,7 +54,7 @@ if (!$result = $mysqli->query($sql)) {
   <body>
     <header>
       <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="../index.php">
           <img
             src="../img/multilogoicon.svg"
             width="100"
