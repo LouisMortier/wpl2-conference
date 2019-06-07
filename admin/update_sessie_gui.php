@@ -135,6 +135,11 @@ if (isset($_GET["id"]) == true) {
                 <label for="bio">Omschrijving</label>
                 <input type="text" class="form-control" name="bio" placeholder="Omschrijving">
             </div>
+
+            <div class="form-group col-8">
+                <label for="afb">Afbeelding</label>
+                <input type="text" class="form-control" name="afb" placeholder="Afbeelding">
+            </div>
             
             <div class="form-group col">
                         <label for="zaal">Zaal</label>
