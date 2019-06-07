@@ -10,17 +10,18 @@ print_r($_POST);
 print("</pre>");
 
 if(isset($_POST["submit"])==true){
-$sql = "UPDATE `sessies` SET titel=?, `start`=?, omschrijving=?, zaalID=?, sprekerID=? WHERE idsessie=?";
+$sql = "UPDATE `sessies` SET titel=?, `start`=?, omschrijving=?, afbeelding=?, zaalID=?, sprekerID=? WHERE idsessie=?";
 
     $stmt = $mysqli->prepare($sql);
     if($mysqli->error!==""){
         print("<p>Error: ".$mysqli->error."</p>");
     }
-    $stmt->bind_param("sssiii", $titel, $start, $bio, $zaal, $spreker,$idsessie);
+    $stmt->bind_param("ssssiii", $titel, $start, $bio, $afb, $zaal, $spreker,$idsessie);
 
     $titel=$_POST['title'];
     $start=$_POST['start'];
     $bio=$_POST['bio'];
+    $afb=$_POST['afb'];
     $zaal=$_POST['zaal'];
     $spreker=$_POST['spreker'];
 
@@ -29,20 +30,10 @@ $sql = "UPDATE `sessies` SET titel=?, `start`=?, omschrijving=?, zaalID=?, sprek
     $stmt->execute();
 
     $affected_rows = $stmt->affected_rows;
-
-    if(count($stmt->error_list)){
-        print("<pre>");
-        print_r($stmt->error_list);
-        print("</pre>");
-    }else{
-        if($affected_rows>0){
-            echo "gelukt";
-            header("location: sessies.php");
-        }else{
-            echo "Did not insert any data.";
-        }
-    }
+    
     $stmt->close();
+
+    header("location: sessie.php");
 }else{
     print("error: u kwam niet via het formulier");
 }
